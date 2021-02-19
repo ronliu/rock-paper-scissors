@@ -1,6 +1,24 @@
 <script>
     function computerPlay() {
-        let move = ["rock", "paper", "scissors"];
-        return move[Math.floor(Math.random() * move.length)];
+        let selection = ["ROCK", "PAPER", "SCISSORS"];
+        return selection[Math.floor(Math.random() * selection.length)];
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        let p = playerSelection.toUpperCase();
+        let c = computerSelection;
+
+        switch (true) {
+            case (p == c):
+                return `Draw! Computer played ${c}.`;
+                break;
+            case (p == "ROCK" && c == "SCISSORS"):
+            case (p == "PAPER" && c == "ROCK"):
+            case (p == "SCISSORS" && c == "PAPER"):
+                return `You Win! Computer played ${c}.`;
+                break;
+            default:
+                return `You Lose! Computer played ${c}.`;
+        }
     }
 </script>
