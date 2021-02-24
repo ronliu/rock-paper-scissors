@@ -2,9 +2,9 @@
     function playerPlay() {
         let selection;
 
-        while (selection != "ROCK" &&
-               selection != "PAPER" &&
-               selection != "SCISSORS") {
+        while (selection !== "ROCK" &&
+               selection !== "PAPER" &&
+               selection !== "SCISSORS") {
             selection = prompt("ROCK, PAPER, or SCISSORS?").toUpperCase();
         }
 
@@ -22,12 +22,12 @@
         let c = computerSelection;
 
         switch (true) {
-            case (p == c):
+            case (p === c):
                 alert(`Draw! Computer played ${c}.`);
                 break;
-            case (p == "ROCK" && c == "SCISSORS"):
-            case (p == "PAPER" && c == "ROCK"):
-            case (p == "SCISSORS" && c == "PAPER"):
+            case (p === "ROCK" && c === "SCISSORS"):
+            case (p === "PAPER" && c === "ROCK"):
+            case (p === "SCISSORS" && c === "PAPER"):
                 alert(`You Win! Computer played ${c}.`);
                 break;
             default:
